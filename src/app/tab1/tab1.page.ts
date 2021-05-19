@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,6 +7,25 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  public barrio = ['Nacederos'];
 
+
+constructor(public menu: MenuController) { }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+  closeFirst() {
+    this.menu.close('first');
+  }
+
+  openPerfil() {
+    this.menu.enable(true, 'end');
+    this.menu.open('end');
+  }
+
+  closePerfil() {
+    this.menu.close('end');
+  }
 }
