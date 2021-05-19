@@ -19,16 +19,31 @@
         <ion-item><ion-icon name="call-outline"></ion-icon>Junta de acción comunal</ion-item>
       </ion-button>
       <ion-button color="light">
-        <ion-item><ion-icon name="accessibility-outline"></ion-icon> Que hacer en mi Barrio</ion-item>
+        <ion-item><ion-icon name="accessibility-outline"></ion-icon> Que puedo hacer en mi Barrio</ion-item>
       </ion-button>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-button color="light">
+        <ion-item><ion-icon name="calendar-outline"></ion-icon>Proximos eventos en mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light">
+        <ion-item><ion-icon name="people-circle-outline"></ion-icon>Conocer personas de mi barrio</ion-item>
+      </ion-button>
+      <ion-button color="light">
+        <ion-item><ion-icon name="book-outline"></ion-icon>Derechos y Deberes mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light">
+        <ion-item><ion-icon name="color-filter-outline"></ion-icon>Objetivos desarrollo sostenible</ion-item>
+      </ion-button>
+      <ion-button color="light">
+        <ion-item><ion-icon name="calculator-outline"></ion-icon>Contabilidad de mi Barrio</ion-item>
+      </ion-button>
+      
     </ion-list>
   </ion-content>
 </ion-menu>
 
 
 <ion-router-outlet id="main"></ion-router-outlet>
+
 <ion-header [translucent]="true">
   
   <ion-toolbar>
@@ -42,12 +57,40 @@
       
       <ion-chip outline="warning">
         <ion-avatar style="margin-left: 0%; margin-right: 0%;">
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          <img src="https://res.cloudinary.com/newstartap/image/upload/v1616785574/imagenesParticipantes/Miguel_Paez_jpg_qdta4w.jpg">
+          
         </ion-avatar>
       </ion-chip>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
+  <ion-segment scrollable value="home" >
+    <ion-segment-button value="home" (click)="publicaciones=true; discuciones=false">
+      <ion-label name="home">Publicaciones Junta</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="heart" (click)="discuciones=true; publicaciones=false ">
+      <ion-label name="home">Discución Pública</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+    <div *ngIf="publicaciones">
+      <p> publicaciones </p>
+    </div>
+
+    <div *ngIf="discuciones">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Mi Barrio</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Discutamos el desarrollo juntos..
+          <br/>
+          <br/>
+          <iframe src="https://chatbro.com/37unE" frameborder="0" style="width: 100%;min-height: 350px;"></iframe>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
 </ion-content>

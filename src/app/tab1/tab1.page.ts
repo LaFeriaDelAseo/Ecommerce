@@ -6,8 +6,12 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  publicaciones=true;
   public barrio = ['Nacederos'];
+  public nombre = ['Miguel Páez'];
+
+  // public publicacionesJunta = [{img: ""},
+  //                             {}]
 
 
 constructor(public menu: MenuController) { }
