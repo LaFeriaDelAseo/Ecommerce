@@ -28,6 +28,9 @@
         <ion-item><ion-icon name="people-circle-outline"></ion-icon>Conocer personas de mi barrio</ion-item>
       </ion-button>
       <ion-button color="light">
+        <ion-item><ion-icon name="cart-outline"></ion-icon>Emprendimientos de mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light">
         <ion-item><ion-icon name="book-outline"></ion-icon>Derechos y Deberes mi Barrio</ion-item>
       </ion-button>
       <ion-button color="light">
@@ -67,28 +70,40 @@
 
 <ion-content [fullscreen]="true" >
   <ion-segment scrollable value="home" >
-    <ion-segment-button value="home" (click)="publicaciones=true; discuciones=false">
+    <ion-segment-button value="home" (click)="publicaciones=true; discuciones=false" style="text-align: center; margin-left: auto; margin-right: auto;">
       <ion-label name="home">Publicaciones Junta</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="heart" (click)="discuciones=true; publicaciones=false ">
+    <ion-segment-button value="heart" (click)="discuciones=true; publicaciones=false " style="text-align: center; margin-left: auto; margin-right: auto;">
       <ion-label name="home">Discución Pública</ion-label>
     </ion-segment-button>
   </ion-segment>
-    <div *ngIf="publicaciones">
+    <div *ngIf="publicaciones" style="text-align: center; margin-left: auto; margin-right: auto;">
       <p> publicaciones </p>
     </div>
 
-    <div *ngIf="discuciones">
+    <div *ngIf="discuciones" style="text-align: center; margin-left: auto; margin-right: auto; max-width: 800px;">
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Mi Barrio</ion-card-title>
+          <ion-card-title>Mi Barrio
+            <a href="https://t.me/joinchat/AWG8yrgwO14xMWJh" Target="_Blank"><ion-chip color="primary" >
+              <ion-avatar>
+                <img src="https://res.cloudinary.com/conexionpublica/image/upload/v1621528803/t_logo_ch6mb6.png">
+              </ion-avatar>
+              <ion-label>Registrarme en Grupo de Telegram</ion-label>
+            </ion-chip></a>
+          </ion-card-title>
+          
         </ion-card-header>
       
         <ion-card-content>
           Discutamos el desarrollo juntos..
-          <br/>
-          <br/>
-          <iframe src="https://chatbro.com/37unE" frameborder="0" style="width: 100%;min-height: 300px;"></iframe>
+          <a href="https://web.telegram.org/#/im?p=s1401194554_16913756030401305367" Target="_Blank"><ion-chip color="primary" >
+            <ion-avatar>
+              <img src="https://res.cloudinary.com/conexionpublica/image/upload/v1621528803/t_logo_ch6mb6.png">
+            </ion-avatar>
+            <ion-label>chat</ion-label>
+          </ion-chip></a>
+          <iframe src="https://chatbro.com/37unE" frameborder="0" style="width: 100%;min-height: 250px;"></iframe>
         </ion-card-content>
       </ion-card>
     </div>
