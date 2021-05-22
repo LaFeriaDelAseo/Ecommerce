@@ -6,6 +6,7 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -13,9 +14,9 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    MDBBootstrapModule.forRoot(),
   ],
   declarations: [Tab1Page]
 })

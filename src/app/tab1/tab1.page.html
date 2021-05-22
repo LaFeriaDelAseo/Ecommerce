@@ -1,74 +1,111 @@
+<!--Menú Mi Barrio-->
 <ion-menu side="start" menuId="first" contentId="main">
   <ion-header >
     <ion-toolbar color="warning">
       <ion-button color="warning" style="text-align: right;" slot="end" (click)="closeFirst()"><ion-icon name="close-circle-outline" ></ion-icon></ion-button>
       <ion-title>Menu - Barrio: {{barrio}}
-        
-         
       </ion-title>
-      
-
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-button color="light" routerLink="/conocer-mi-comuna">
+        <ion-item><ion-icon name="earth-outline"></ion-icon> Conocer mi Comuna</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/junta-de-accion-comunal">
+        <ion-item><ion-icon name="call-outline"></ion-icon>Junta de acción comunal</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/que-puedo-hacer-en-mi-barrio">
+        <ion-item><ion-icon name="accessibility-outline"></ion-icon> Que puedo hacer en mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/proximos-eventos-en-mi-barrio">
+        <ion-item><ion-icon name="calendar-outline"></ion-icon>Proximos eventos en mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/conocer-personasde-mi-barrio">
+        <ion-item><ion-icon name="people-circle-outline"></ion-icon>Conocer personas de mi barrio</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/emprendimientos-de-mi-barrio">
+        <ion-item><ion-icon name="cart-outline"></ion-icon>Emprendimientos de mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/derechosy-deberes-en-mi-barrio">
+        <ion-item><ion-icon name="book-outline"></ion-icon>Derechos y Deberes mi Barrio</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/objetivos-de-desarrollo-sostenible-en-mi-barrio">
+        <ion-item><ion-icon name="color-filter-outline"></ion-icon>Objetivos desarrollo sostenible</ion-item>
+      </ion-button>
+      <ion-button color="light" routerLink="/contabilidad-de-mi-barrio">
+        <ion-item><ion-icon name="calculator-outline"></ion-icon>Contabilidad de mi Barrio</ion-item>
+      </ion-button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+<!--Menú Mi Barrio-->
+<!--Menú Mi Perfil-->
+<ion-menu side="end" menuId="second" contentId="main">
+  <ion-header >
+    <ion-toolbar color="primary">
+      <ion-button color="primary" style="text-align: right;" slot="end" (click)="closePerfil()"><ion-icon name="close-circle-outline" ></ion-icon></ion-button>
+      <ion-title>Mi Perfil
+      </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <ion-button color="light">
-        <ion-item><ion-icon name="earth-outline"></ion-icon> Conocer mi Comuna</ion-item>
+        <ion-item><ion-icon name="earth-outline"></ion-icon> Mi Perfil Básico</ion-item>
       </ion-button>
       <ion-button color="light">
-        <ion-item><ion-icon name="call-outline"></ion-icon>Junta de acción comunal</ion-item>
+        <ion-item><ion-icon name="call-outline"></ion-icon>Mi Perfil Público</ion-item>
       </ion-button>
       <ion-button color="light">
-        <ion-item><ion-icon name="accessibility-outline"></ion-icon> Que puedo hacer en mi Barrio</ion-item>
+        <ion-item><ion-icon name="accessibility-outline"></ion-icon>Mi Perfil Laboral</ion-item>
       </ion-button>
       <ion-button color="light">
-        <ion-item><ion-icon name="calendar-outline"></ion-icon>Proximos eventos en mi Barrio</ion-item>
+        <ion-item><ion-icon name="calendar-outline"></ion-icon>Mi Perfil Empresarial</ion-item>
       </ion-button>
       <ion-button color="light">
-        <ion-item><ion-icon name="people-circle-outline"></ion-icon>Conocer personas de mi barrio</ion-item>
+        <ion-item><ion-icon name="people-circle-outline"></ion-icon>Mi Perfil Junta Comunal</ion-item>
       </ion-button>
-      <ion-button color="light">
-        <ion-item><ion-icon name="cart-outline"></ion-icon>Emprendimientos de mi Barrio</ion-item>
-      </ion-button>
-      <ion-button color="light">
-        <ion-item><ion-icon name="book-outline"></ion-icon>Derechos y Deberes mi Barrio</ion-item>
-      </ion-button>
-      <ion-button color="light">
-        <ion-item><ion-icon name="color-filter-outline"></ion-icon>Objetivos desarrollo sostenible</ion-item>
-      </ion-button>
-      <ion-button color="light">
-        <ion-item><ion-icon name="calculator-outline"></ion-icon>Contabilidad de mi Barrio</ion-item>
-      </ion-button>
-      
     </ion-list>
   </ion-content>
 </ion-menu>
-
-
 <ion-router-outlet id="main"></ion-router-outlet>
+<!--Menú Mi Perfil-->
 
-<ion-header [translucent]="true">
+<!--Cotenido del TAB1-->
+
+
+
+<!--ToolBar-->
+<ion-content [fullscreen]="true"  >
+  <ion-card  class="cardToolbar">
+  <ion-title  class="toolbar">
+    <ion-chip color="primary" style="margin-left: 0%; margin-right: 0%;" (click)="openFirst()">
+      <ion-icon name="menu-outline" color="dark" style="height: 60px;width: 30px; margin-left: 0%; margin-right: 0%;"></ion-icon>
+    </ion-chip>
+    <ion-chip color="primary" style="max-width: 100px;"> Barrio: {{barrio}}
+    </ion-chip>
+    <ion-chip color="primary">
+      <ion-icon name="briefcase-outline" color="dark"></ion-icon>
+    </ion-chip>
+    <ion-chip color="primary">
+      <ion-icon name="people-circle-outline" color="dark"></ion-icon>
+    </ion-chip>
+    <ion-chip (click)="openPerfil()">
+      <ion-avatar style="margin-left: 0%; margin-right: 0%;">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1616785574/imagenesParticipantes/Miguel_Paez_jpg_qdta4w.jpg">
+        
+      </ion-avatar>
+    </ion-chip>
+  </ion-title>
+</ion-card>
+<!--ToolBar-->
+
+  <div class="boddy">
+  <div class="boddyMenor">
+  <!--Segmentos-->
   
-  <ion-toolbar>
-    
-    <ion-title style="text-align: center; margin-left: auto; margin-right: auto;">
-      <ion-chip outline="warning" style="margin-left: 0%; margin-right: 0%;" (click)="openFirst()">
-        <ion-icon name="menu-outline" color="dark" style="height: 60px;width: 30px; margin-left: 0%; margin-right: 0%;"></ion-icon>
-      </ion-chip>
-      <ion-chip outline="warning"> Barrio: {{barrio}}
-      </ion-chip>
-      
-      <ion-chip outline="warning">
-        <ion-avatar style="margin-left: 0%; margin-right: 0%;">
-          <img src="https://res.cloudinary.com/newstartap/image/upload/v1616785574/imagenesParticipantes/Miguel_Paez_jpg_qdta4w.jpg">
-          
-        </ion-avatar>
-      </ion-chip>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" >
   <ion-segment scrollable value="home" >
     <ion-segment-button value="home" (click)="publicaciones=true; discuciones=false" style="text-align: center; margin-left: auto; margin-right: auto;">
       <ion-label name="home">Publicaciones Junta</ion-label>
@@ -77,39 +114,50 @@
       <ion-label name="home">Discución Pública</ion-label>
     </ion-segment-button>
   </ion-segment>
-    <div *ngIf="publicaciones" style="text-align: center; margin-left: auto; margin-right: auto;">
-      <a href="https://t.me/joinchat/AWG8yrgwO14xMWJh" Target="_Blank" style="text-decoration: none;" ><ion-chip color="warning" >
-        <ion-icon name="cart-outline"></ion-icon>
+  <!--Segmentos-->
+  <!--botones antes de -->
+    <div *ngIf="publicaciones" >
+      <div style="text-align: center; margin-left: auto; margin-right: auto;">
+      <a href="https://t.me/joinchat/AWG8yrgwO14xMWJh" Target="_Blank" style="text-decoration: none; text-align: center; margin-left: auto; margin-right: auto;">
+        <ion-chip color="warning" >
+          <ion-icon name="cart-outline"></ion-icon>
         <ion-label>Emprendimientos de mi Barrio</ion-label>
       </ion-chip></a>
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          <ion-card-title>Card Title</ion-card-title>
-        </ion-card-header>
-      
+    </div>
+  <!--botones antes de -->
+  <!--cards-->
+  <ion-card *ngFor="let item of items">
+    <ion-card-header>
+      <ion-item>
+        <div>
+        <ion-card-subtitle >Publicado por:
+          <a href="{{item.perfil}}" style="text-decoration: none; text-align: center; margin-left: auto; margin-right: auto;">
+          <ion-chip color="primary" >
+            <ion-avatar style="margin-left: 0%; margin-right: 0%;">
+              <img class="animated bounce infinite" src="https://res.cloudinary.com/newstartap/image/upload/v1616785574/imagenesParticipantes/Miguel_Paez_jpg_qdta4w.jpg">
+          </ion-avatar>
+          &nbsp;
+          <ion-label>Miguel Páez</ion-label>
+        </ion-chip></a>
+        </ion-card-subtitle>
+        </div>
+    <ion-card-subtitle>Fecha:</ion-card-subtitle>
+      <ion-card-subtitle>Fecha:</ion-card-subtitle>
+    </ion-item>
+      <ion-card-title>Titulo:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="text-align: center; margin-right: auto;margin-left: auto;">
+        <img src="{{item.img}}" class="zoom" alt="">
+          
+        </ion-card-content>
         <ion-card-content>
-          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmiguelangel.paezparra%2Fposts%2F4334017096633135&show_text=true&width=500" width="500" height="373" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-subtitle>Descripción:</ion-card-subtitle>
         </ion-card-content>
       </ion-card>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmiguelangel.paezparra%2Fposts%2F4332310410137137&show_text=true&width=500" width="500" height="497" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-content>
-      </ion-card>
-      
     </div>
-
+    <!--cards-->
+    <!--Chat Comunitario-->
     <div *ngIf="discuciones" style="text-align: center; margin-left: auto; margin-right: auto; max-width: 800px;">
-      
       <ion-card>
         <ion-card-header>
           <ion-card-title>Mi Barrio
@@ -126,20 +174,31 @@
               </ion-avatar>
               <ion-label>Registrarme en Grupo de Telegram</ion-label>
             </ion-chip></a>
-            
           </ion-card-title>
-          
         </ion-card-header>
-      
         <ion-card-content>
           <a href="https://t.me/joinchat/AWG8yrgwO14xMWJh" Target="_Blank" style="text-decoration: none;" ><ion-chip color="warning" >
             <ion-icon name="cart-outline"></ion-icon>
             <ion-label>Emprendimientos de mi Barrio</ion-label>
           </ion-chip></a>
-          
           <iframe src="https://chatbro.com/37unE" frameborder="0" style="width: 100%;min-height: 240px;"></iframe>
         </ion-card-content>
       </ion-card>
     </div>
+    <!--Chat Comunitario-->
 
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  </div>
+  </div>
 </ion-content>
+
+<!--Cotenido del TAB1-->

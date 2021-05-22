@@ -7,13 +7,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class Tab1Page {
   publicaciones=true;
-  public barrio = ['Nacederos'];
+  public barrio = ['Nacederos y Simó Bolivar'];
   public nombre = ['Miguel Páez'];
-
-  // public publicacionesJunta = [{img: ""},
-  //                             {}]
-
-
+  public items = [{perfil:'https://miguelpaez.vercel.app/',
+                  img:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  },
+                ];
 constructor(public menu: MenuController) { }
 
   openFirst() {
@@ -25,11 +25,11 @@ constructor(public menu: MenuController) { }
   }
 
   openPerfil() {
-    this.menu.enable(true, 'end');
-    this.menu.open('end');
+    this.menu.enable(true, 'second');
+    this.menu.open('second');
   }
 
   closePerfil() {
-    this.menu.close('end');
+    this.menu.close('second');
   }
 }
