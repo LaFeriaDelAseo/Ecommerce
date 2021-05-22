@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -13,8 +13,20 @@ export class Tab1Page {
                   img:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
                   iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
                   },
+                  {perfil:'https://miguelpaez.vercel.app/',
+                  img:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  },
+                  {perfil:'https://miguelpaez.vercel.app/',
+                  img:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  },
+                  {perfil:'https://miguelpaez.vercel.app/',
+                  img:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
+                  },
                 ];
-constructor(public menu: MenuController) { }
+constructor(public menu: MenuController, public alertController: AlertController) { }
 
   openFirst() {
     this.menu.enable(true, 'first');
@@ -32,4 +44,20 @@ constructor(public menu: MenuController) { }
   closePerfil() {
     this.menu.close('second');
   }
+  
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Hola',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
 }

@@ -42,6 +42,14 @@ const routes: Routes = [
     path: 'conocer-mi-comuna',
     loadChildren: () => import('./menuTab1/conocer-mi-comuna/conocer-mi-comuna.module').then( m => m.ConocerMiComunaPageModule)
   },
+  {
+    path: 'perfil-visible',
+    loadChildren: () => import('./perfilJuntaComunal/perfil-visible/perfil-visible.module').then( m => m.PerfilVisiblePageModule)
+  },
+  {
+    path: 'perfil-editable',
+    loadChildren: () => import('./perfilJuntaComunal/perfil-editable/perfil-editable.module').then( m => m.PerfilEditablePageModule)
+  },
   
 ];
 @NgModule({
