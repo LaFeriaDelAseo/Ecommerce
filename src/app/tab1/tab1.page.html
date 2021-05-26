@@ -137,7 +137,8 @@
     </div>
   <!--botones antes de -->
   <!--cards-->
-  <ion-card *ngFor="let item of items">
+  <div *ngFor="let item of items">
+  <ion-card >
     <ion-card-header>
       <ion-item>
         <div>
@@ -165,6 +166,28 @@
           <ion-card-subtitle>Descripción:</ion-card-subtitle>
         </ion-card-content>
       </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle style="text-align: left;">Aporte voluntario para la construcción y mantenimiento de la plataforma:</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content style="text-align: left; ">
+          <ion-card-title>
+            Aporte en:
+          </ion-card-title>
+          <ion-chip color="tertiary" routerLink="/aporte-voluntario-pesos">
+              <ion-icon name="cash-outline"></ion-icon>
+            <ion-label>
+              Pesos Colombianos
+            </ion-label>
+          </ion-chip>
+          <ion-chip color="success" routerLink="/aporte-voluntario-dolares">
+              <ion-icon name="cash-outline"></ion-icon>
+            <ion-label>Dólares</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
     </div>
     <!--cards-->
     <!--Chat Comunitario-->

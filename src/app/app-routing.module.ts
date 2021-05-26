@@ -50,6 +50,14 @@ const routes: Routes = [
     path: 'perfil-editable',
     loadChildren: () => import('./perfilJuntaComunal/perfil-editable/perfil-editable.module').then( m => m.PerfilEditablePageModule)
   },
+  {
+    path: 'aporte-voluntario-dolares',
+    loadChildren: () => import('./menuTab1/aporte-voluntario-dolares/aporte-voluntario-dolares.module').then( m => m.AporteVoluntarioDolaresPageModule)
+  },
+  {
+    path: 'aporte-voluntario-pesos',
+    loadChildren: () => import('./menuTab1/aporte-voluntario-pesos/aporte-voluntario-pesos.module').then( m => m.AporteVoluntarioPesosPageModule)
+  },
   
 ];
 @NgModule({
